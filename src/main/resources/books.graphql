@@ -1,0 +1,44 @@
+schema {
+ mutation: Mutation
+ query: Query
+}
+
+type Mutation {
+    addBooks(isn: String, title: String, publisher: String, authors: String, publishedDate: String, userName: String) : Book
+}
+
+
+type Query {
+ allBooks: [Book]
+ book(id: String): Book
+ user(userName: String): User
+ address(id: String): Address
+}
+
+type Book {
+  isn: String
+  title: String
+  publisher: String
+  authors: String
+  publishedDate: String
+  userName: String
+}
+
+type User {
+  userName: String
+  firstName: String
+  lastName: String
+  email: String
+}
+
+type Address {
+  id: String
+  userName: String
+  house: String
+  street: String
+  city: String
+}
+input AuthData {
+   email: String!
+   password: String!
+}
